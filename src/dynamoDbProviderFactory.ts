@@ -2,7 +2,7 @@ import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { Provider } from '@nestjs/common';
 import { ConfigService } from "@nestjs/config";
 
-export const dbFactory: Provider = {
+export const dynamoDbProviderFactory: Provider = {
   provide: DynamoDBClient,
   useFactory: (configService: ConfigService): DynamoDBClient => {
     const dbParams = {

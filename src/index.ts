@@ -1,2 +1,2 @@
-export * from './db.factory';
+export * from './dynamoDbProviderFactory';
 export * from './mapper.interface';
