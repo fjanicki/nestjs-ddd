@@ -1,4 +1,4 @@
-import { Property } from '@mikro-orm/core';
+import { DateTimeType, Property } from '@mikro-orm/core';
 
 /**
  * The entity that is persisted.
@@ -9,15 +9,9 @@ export abstract class BaseOrmEntity {
    */
   id!: string;
 
-  @Property({ onUpdate: () => new Date() })
-  updatedAt!: Date;
+  @Property({ type: DateTimeType })
+  createdAt: string = new Date().toISOString();
 
-  @Property({ onCreate: () => new Date() })
-  createdAt!: Date;
-
-  constructor(props?: unknown) {
-    if (props) {
-      Object.assign(this, props);
-    }
-  }
+  @Property({ type: DateTimeType, onUpdate: () => new Date().toISOString() })
+  updatedAt: string = new Date().toISOString();
 }

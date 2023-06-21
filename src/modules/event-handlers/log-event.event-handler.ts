@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { OnEvent } from '@nestjs/event-emitter';
 import { BaseEventHandler } from "./base.event-handler";
-import { AllEventsDomainEvent } from "../domain/events/all-events.domain-event";
+import { AllEventsDomainEvent } from "../domain";
 
 @Injectable()
 export class LogEventEventHandler extends BaseEventHandler<AllEventsDomainEvent> {

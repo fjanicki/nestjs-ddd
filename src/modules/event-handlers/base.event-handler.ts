@@ -1,4 +1,4 @@
-import { BaseDomainEvent } from '../domain/events/base.domain-event';
+import { BaseDomainEvent } from '../domain';
 
 /**
  * A handler for a domain event.
