@@ -31,7 +31,6 @@
   },
   "homepage": "https://github.com/fjanicki/nestjs-ddd#readme",
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.252.0",
     "@badrap/result": "^0.2.13",
     "@mikro-orm/core": "^5.7.12",
     "@nestjs/common": "^9.2.1",
