@@ -7,11 +7,11 @@ export class Nanoid extends Id {
   /**
    * Returns new id instance with randomly generated id value
    */
-  alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   alphaNumericRegexMatcher = /^[a-z0-9]+$/i;
 
   static generate(): Nanoid {
-    const nanoid = customAlphabet(Nanoid.prototype.alphabet, 15);
+    const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const nanoid = customAlphabet(alphabet, 15);
 
     return new Nanoid(nanoid());
   }
