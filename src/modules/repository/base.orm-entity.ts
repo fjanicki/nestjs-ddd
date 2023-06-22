@@ -14,4 +14,10 @@ export abstract class BaseOrmEntity {
 
   @Property({ type: DateTimeType, onUpdate: () => new Date().toISOString() })
   updatedAt: string = new Date().toISOString();
+
+  constructor(props?: unknown) {
+    if (props) {
+      Object.assign(this, props);
+    }
+  }
 }
