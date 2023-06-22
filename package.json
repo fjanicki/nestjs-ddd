@@ -1,6 +1,6 @@
 {
   "name": "@fjanicki/nestjs-ddd",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "Utilities to work with ddd in NestJS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
