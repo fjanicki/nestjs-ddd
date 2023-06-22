@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { Uuid } from '../domain/value-object/uuid.value-object';
+import { Uuid } from '../domain';
 import { ArgumentNotProvidedError } from '../../errors';
 import { ValidateUtils } from '../../utils';
 

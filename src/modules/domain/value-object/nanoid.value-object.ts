@@ -17,12 +17,8 @@ export class Nanoid extends Id {
   }
 
   protected validate({ value }: DomainPrimitive<string>): void {
-    if (value.length !== 15) {
-      throw new ArgumentInvalidError('Incorrect nanoid format');
-    }
-
-    if (value.match(this.alphaNumericRegexMatcher)) {
-      throw new ArgumentInvalidError('Incorrect nanoid format. Contains illegal characters.');
+    if (!this.alphaNumericRegexMatcher.test(value)) {
+      throw new ArgumentInvalidError('Incorrect Nanoid format');
     }
   }
 }

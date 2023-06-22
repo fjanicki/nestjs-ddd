@@ -1,5 +1,5 @@
 import { BaseCommand } from './base.command';
-import { Result } from '../../types/result.type';
+import { Result } from '@badrap/result';
 import { ICommandHandler } from '@nestjs/cqrs';
 
 /**

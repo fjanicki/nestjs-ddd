@@ -20,7 +20,7 @@ export abstract class BaseDomainEvent {
   static eventName: string;
 
   /**
-   * A unique id for the event.
+   * A unique id for the event. Will be generated automatically as a Nanoid.
    */
   public readonly id: string;
 
@@ -30,7 +30,7 @@ export abstract class BaseDomainEvent {
   readonly aggregateId: Id;
 
   /**
-   * The date when the event occurred.
+   * The date when the event occurred. Defaults to Date.now().
    */
   readonly dateOccurred: number;
 

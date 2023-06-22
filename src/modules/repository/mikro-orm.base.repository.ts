@@ -8,7 +8,7 @@ import {
   QueryParams
 } from "./base.repository.interface";
 import { BaseOrmMapper } from "./base.orm-mapper";
-import { DomainEventService } from "../commands/publish-domain-events/domain-event.service";
+import { DomainEventService } from "../commands/publish-domain-events";
 
 export abstract class MikroOrmBaseRepository<
   Entity extends BaseAggregate<unknown>,

@@ -20,7 +20,6 @@ export * from './modules/repository/base.repository.interface';
 export * from './modules/base.controller';
 export * from './modules/base.request';
 export * from './modules/base.response';
-export * from './modules/base.result';
 export * from './modules/dto/base-entity.response';
 export * from './types/deep-partial.type';
 export * from './types/non-function-properties.type';
