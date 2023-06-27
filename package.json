@@ -1,7 +1,7 @@
 {
   "name": "@fjanicki/nestjs-ddd",
-  "version": "2.0.10",
-  "description": "Utilities to work with ddd in NestJS",
+  "version": "2.1.0",
+  "description": "Utilities to work with DDD in NestJS",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -12,7 +12,6 @@
     "prepublish:next": "npm run build",
     "publish:next": "npm publish --access public --tag next",
     "prepublish:npm": "npm run build",
-    "publish:npm": "npm publish --access public",
     "release": "release-it",
     "lint": "eslint \"src/**/*.ts\" --fix"
   },
