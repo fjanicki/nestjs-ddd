@@ -5,7 +5,7 @@ import { Producer } from "sqs-producer";
 import { Consumer } from "sqs-consumer";
 import { Message } from "@aws-sdk/client-sqs";
 
-import { ISqsClientOptions } from "./interfaces";
+import { SqsClientOptions } from "./interfaces";
 import { SqsDeserializer } from "./sqs.deserializer";
 import { SqsSerializer } from "./sqs.serializer";
 
@@ -15,7 +15,7 @@ export class SqsClient extends ClientProxy {
 
   private readonly logger = new Logger("SqsService");
 
-  constructor(protected readonly options: ISqsClientOptions["options"]) {
+  constructor(protected readonly options: SqsClientOptions["options"]) {
     super();
 
     this.initializeSerializer(options);
@@ -99,11 +99,11 @@ export class SqsClient extends ClientProxy {
     return Object.assign(packet, { id });
   }
 
-  protected initializeSerializer(options: ISqsClientOptions["options"]): void {
+  protected initializeSerializer(options: SqsClientOptions["options"]): void {
     this.serializer = options?.serializer ?? new SqsSerializer();
   }
 
-  protected initializeDeserializer(options: ISqsClientOptions["options"]): void {
+  protected initializeDeserializer(options: SqsClientOptions["options"]): void {
     this.deserializer = options?.deserializer ?? new SqsDeserializer();
   }
 }

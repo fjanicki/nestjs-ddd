@@ -3,7 +3,7 @@ import { ClientProxy } from "@nestjs/microservices";
 
 import { ProducerOptions } from "./producer";
 
-export interface ISqsClientOptions {
+export interface SqsClientOptions {
   customClass: Type<ClientProxy>;
   options: ProducerOptions;
 }

@@ -6,7 +6,7 @@ import { Producer } from "sqs-producer";
 import { from } from "rxjs";
 import { Message } from "@aws-sdk/client-sqs";
 
-import { ISqsServerOptions } from "./interfaces";
+import { SqsServerOptions } from "./interfaces";
 import { SqsSerializer } from "./sqs.serializer";
 import { SqsDeserializer } from "./sqs.deserializer";
 
@@ -15,7 +15,7 @@ export class SqsServer extends Server implements CustomTransportStrategy {
   private consumer: Consumer;
   private producer: Producer;
 
-  constructor(protected readonly options: ISqsServerOptions["options"]) {
+  constructor(protected readonly options: SqsServerOptions["options"]) {
     super();
 
     this.initializeSerializer(options);
@@ -81,11 +81,11 @@ export class SqsServer extends Server implements CustomTransportStrategy {
     this.consumer.stop();
   }
 
-  protected initializeSerializer(options: ISqsServerOptions["options"]): void {
+  protected initializeSerializer(options: SqsServerOptions["options"]): void {
     this.serializer = options?.serializer ?? new SqsSerializer();
   }
 
-  protected initializeDeserializer(options: ISqsServerOptions["options"]): void {
+  protected initializeDeserializer(options: SqsServerOptions["options"]): void {
     this.deserializer = options?.deserializer ?? new SqsDeserializer();
   }
 }
