@@ -9,9 +9,6 @@
     "rimraf": "npx rimraf dist",
     "build": "tsc",
     "test": "test",
-    "prepublish:next": "npm run build",
-    "publish:next": "npm publish --access public --tag next",
-    "prepublish:npm": "npm run build",
     "release": "release-it",
     "format": "eslint \"src/**/*.ts\" --fix",
     "lint": "eslint \"src/**/*.ts\""
