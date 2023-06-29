@@ -22,6 +22,8 @@ jobs:
           git config --global user.name "Release Workflow"
       - name: Log git status
         run: git status
+      - name: Build project
+        run: npm run build
       - name: Run release
         run: npm run release --ci
         env:
