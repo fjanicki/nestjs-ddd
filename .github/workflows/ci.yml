@@ -9,7 +9,11 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
       - name: Install the dependencies
-        run: yarn install --immutable
+        run: npm ci
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Initialise the NPM config
+        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Initialize Git user
@@ -19,7 +23,7 @@ jobs:
       - name: Log git status
         run: git status
       - name: Run release
-        run: yarn release --ci
+        run: npm run release --ci
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
