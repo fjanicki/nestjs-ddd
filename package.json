@@ -27,6 +27,10 @@
     "url": "https://github.com/fjanicki/nestjs-ddd/issues"
   },
   "homepage": "https://github.com/fjanicki/nestjs-ddd#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "dependencies": {
     "@aws-sdk/client-sqs": "^3.360.0",
     "@badrap/result": "^0.2.13",
