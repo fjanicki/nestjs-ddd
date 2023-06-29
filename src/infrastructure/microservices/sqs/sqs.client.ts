@@ -1,6 +1,5 @@
 import { Logger } from "@nestjs/common";
 import { ClientProxy, PacketId, ReadPacket, WritePacket } from "@nestjs/microservices";
-import { randomStringGenerator } from "@nestjs/common/utils/random-string-generator.util";
 import { Producer } from "sqs-producer";
 import { Consumer } from "sqs-consumer";
 import { Message } from "@aws-sdk/client-sqs";
@@ -8,6 +7,7 @@ import { Message } from "@aws-sdk/client-sqs";
 import { SqsClientOptions } from "./interfaces";
 import { SqsDeserializer } from "./sqs.deserializer";
 import { SqsSerializer } from "./sqs.serializer";
+import { Nanoid } from "../../../modules/domain";
 
 export class SqsClient extends ClientProxy {
   private producer: Producer;
@@ -79,7 +79,6 @@ export class SqsClient extends ClientProxy {
     if (!callback) {
       return undefined;
     }
-    // eslint-disable-next-line n/no-callback-literal
     callback({
       response,
       err,
@@ -95,7 +94,7 @@ export class SqsClient extends ClientProxy {
   }
 
   protected assignPacketId(packet: ReadPacket): ReadPacket & PacketId {
-    const id = randomStringGenerator();
+    const id = Nanoid.generate().value;
     return Object.assign(packet, { id });
   }
 
