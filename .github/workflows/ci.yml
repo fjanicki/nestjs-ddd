@@ -9,7 +9,7 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
       - name: Install the dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Initialize Git user
