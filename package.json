@@ -13,7 +13,8 @@
     "publish:next": "npm publish --access public --tag next",
     "prepublish:npm": "npm run build",
     "release": "release-it",
-    "lint": "eslint \"src/**/*.ts\" --fix"
+    "format": "eslint \"src/**/*.ts\" --fix",
+    "lint": "eslint \"src/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -57,13 +58,15 @@
     "**/*.{ts,json}": []
   },
   "devDependencies": {
+    "@release-it/conventional-changelog": "^5.1.1",
     "@types/node": "^20.3.1",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.60.0",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
-    "release-it": "^15.6.0",
-    "rimraf": "^5.0.1"
+    "release-it": "^15.11.0",
+    "rimraf": "^5.0.1",
+    "supertest": "^6.3.3"
   },
   "packageManager": "yarn@3.6.0"
 }
