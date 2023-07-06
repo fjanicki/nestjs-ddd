@@ -7,7 +7,11 @@
   "scripts": {
     "rimraf": "npx rimraf dist",
     "build": "tsc",
-    "test": "test",
+    "pretest": "localstack start -d --docker && test/setup_sqs.sh",
+    "test": "jest --config jestrc.json",
+    "test:unit": "jest --config jestrc.json --testPathPattern=test/unit",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --config jestrc.json --runInBand ./test",
+    "test:integration": "jest --config jestrc.integration.json --testPathPattern=test/integration",
     "release": "release-it",
     "format": "eslint \"src/**/*.ts\" --fix",
     "lint": "eslint \"src/**/*.ts\""
@@ -42,8 +46,8 @@
     "@nestjs/cqrs": "^10.0.0",
     "@nestjs/event-emitter": "^2.0.0",
     "@nestjs/microservices": "^10.0.3",
+    "@nestjs/platform-express": "^10.0.3",
     "@nestjs/swagger": "^7.0.2",
-    "@nestjs/testing": "^10.0.3",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "nanoid": "^3.3.4",
@@ -58,15 +62,29 @@
     "**/*.{ts,json}": []
   },
   "devDependencies": {
+    "@nestjs/testing": "^10.0.3",
     "@release-it/conventional-changelog": "^5.1.1",
+    "@types/jest": "^29.5.2",
     "@types/node": "^20.3.1",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.60.0",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
+    "jest": "^29.5.0",
+    "jest-mock-extended": "^3.0.4",
     "release-it": "^15.11.0",
     "rimraf": "^5.0.1",
-    "supertest": "^6.3.3"
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.0"
   },
-  "packageManager": "yarn@3.6.0"
+  "packageManager": "yarn@3.6.0",
+  "jest": {
+    "preset": "ts-jest",
+    "roots": [
+      "<rootDir>/test"
+    ],
+    "modulePaths": [
+      "."
+    ]
+  }
 }

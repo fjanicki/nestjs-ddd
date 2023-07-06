@@ -1,4 +1,4 @@
-import { Id } from '../value-object/id.value-object';
+import { Id } from '../value-object';
 import { DateValueObject } from '../value-object';
 import { ConvertUtils, ValidateUtils } from '../../../utils';
 import { ArgumentNotProvidedError, ArgumentOutOfRangeError } from '../../../errors';

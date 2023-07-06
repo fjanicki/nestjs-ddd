@@ -1,5 +1,4 @@
-import { ConvertUtils } from '../../../utils/convert.utils';
-import { ValidateUtils } from '../../../utils';
+import { ConvertUtils, ValidateUtils } from '../../../utils';
 import { ArgumentNotProvidedError } from '../../../errors';
 
 /**

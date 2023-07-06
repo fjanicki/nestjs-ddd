@@ -1,6 +1,6 @@
 import { BaseEntity } from './base.entity';
-import { BaseDomainEvent } from '../events/base.domain-event';
-import { DomainEventService } from '../../commands/publish-domain-events/domain-event.service';
+import { BaseDomainEvent } from '../events';
+import { DomainEventService } from '../../commands/publish-domain-events';
 
 export abstract class BaseAggregate<EntityProps> extends BaseEntity<EntityProps> {
   private _domainEvents: BaseDomainEvent[] = [];

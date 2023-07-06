@@ -1,5 +1,5 @@
-import { BaseCommandHandlerService } from './base-command-handler.service';
-import { BaseCommand } from './base.command';
+import { BaseCommandHandlerService } from '../../../src/modules/commands/base-command-handler.service';
+import { BaseCommand } from '../../../src/modules/commands/base.command';
 import { Result } from '@badrap/result';
 
 /**

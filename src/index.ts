@@ -2,7 +2,6 @@ export * from './modules/repository';
 export * from './modules/commands/publish-domain-events/domain-event.service';
 export * from './modules/commands/base.command';
 export * from './modules/commands/base-command-handler.service';
-export * from './modules/commands/base-command-handler.service.mock';
 export * from './modules/domain';
 export * from './modules/domain/entities/base.aggregate';
 export * from './modules/domain/entities/base.entity';

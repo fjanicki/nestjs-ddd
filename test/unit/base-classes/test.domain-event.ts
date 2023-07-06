@@ -1,4 +1,4 @@
-import { BaseDomainEvent } from "./base.domain-event";
+import { BaseDomainEvent } from "../../../src";
 
 /**
  * TestDomainEvent is a domain event for testing purposes.
